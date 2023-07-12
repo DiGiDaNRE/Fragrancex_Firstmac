@@ -1,8 +1,0 @@
-Feature: Navigational functionality of Frangrancex TOP PICK FOR YOU category
-
-  Scenario: User orders Third product displayed on TOP PICKS FOR YOU category
-    Given User using "chrome" access website
-    When In homepage direct to TOP PICKS FOR YOU category to select Third product listed
-    Then Select second variant proceed with checkout
-    Then Validate quantity is one
-    Then Changes quantity to five
