@@ -2,18 +2,48 @@ package common;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Commands extends BasePage {
+import manager.DriverManager;
+import pageobjects.CheckOutPage;
+import pageobjects.ProductPage;
 
+
+public class Commands extends BasePage {
 	
-	public void waitElement(By by) {
+	CheckOutPage checkOutPage = new CheckOutPage();
+	ProductPage productPage = new ProductPage();
+	DriverManager driverManager = new DriverManager();
+	
+	public void setupBrowser(String BrowserType) {
+		if(BrowserType == "chrome") {
+			driverManager.setupDriverChrome();
+		}else if(BrowserType == "firefox") {
+			driverManager.setupDriverfirefox();
+		}else if(BrowserType == "edge") {
+			driverManager.setupDriverEdge();
+		};
+	}
+	
+	public void popUp() {
+		waitElement(By.xpath("//*[@id=\"coupon-popup\" and @style=\"display: block;\"]"));
+		clickElement(By.xpath("/html/body/div[4]/div/div/div[1]/img[2]"));
+	}
+	
+	public void accessURL(String url) {
+		setupBrowser("chrome");
+		driver.get(url);
+		popUp();
+	}
+
+	public static void waitElement(By by) {
 		int attempts = 0;
-		while(attempts < 20) {
+		while(attempts < 10) {
 			try {
 				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(3));
 				wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -23,7 +53,7 @@ public class Commands extends BasePage {
 			attempts++;
 		}
 	}
-	
+
 	public void clickElement(By by) {
 		waitElement(by);
 		driver.findElement(by).click();
@@ -41,25 +71,27 @@ public class Commands extends BasePage {
 	    for(WebElement e : listOfLinks) 
         {        
         System.out.println("Anchor: "+e.getAttribute("href"));																//list all products 
-        }
-	    
-		WebElement ProductNameInitial = listOfLinks.get(2);																	//Convert to variable in feature step																		
-	    String HrefProductAnchorInitial = ProductNameInitial.getText().toLowerCase();
-	    String[] SplitAnchor1 = HrefProductAnchorInitial.split("by", 0);	
+        }	
 	    
 	    WebElement ProductAnchor = listOfLinks.get(2);																		//select product needed for test	
 	    String HrefProductAnchor = ProductAnchor.getAttribute("href");														//retrieve href attribute of product
-	       
+
+	    String HrefProductAnchorInitial = ProductAnchor.getText().toLowerCase();											
+	    String[] SplitAnchor1 = HrefProductAnchorInitial.split("by", 0);													//retrieving productName
+	    
 	    String[] SplitAnchor = HrefProductAnchor.split("https://www.fragrancex.com", 0);									//split in order to be append in xpath
 	    System.out.println("Picked Product: "+SplitAnchor[1]);
-	    	
 	    waitElement(By.xpath("//a[@href='"+SplitAnchor[1]+"']"));															//appended in xpath
 		driver.findElement(By.xpath("//a[@href='"+SplitAnchor[1]+"']")).click();
 	    
-		WebElement ComapreProduct = driver.findElement(By.xpath("//*[@id=\"content\"]/section/div[1]/div[2]/div[1]/div[2]/div/div/h1/span"));
+													
+		
+		WebElement ComapreProduct = driver.findElement(productPage.ProductNameSelector);									//locating productName
 		String ProdctName = ComapreProduct.getText().toLowerCase();
-		System.out.println("Product Selected: "+ProdctName);
-		System.out.println("Product Clicked: "+SplitAnchor1[0]);
+		
+		System.out.println("Selected Product: "+ProdctName);
+		System.out.println("Clicked Product: "+SplitAnchor1[0]);
+		System.out.println("Is displayed product selected:"+ProdctName.replaceAll("\\s", "_").contains(SplitAnchor1[0].replaceAll("\\s", "_")));	//check if it contains string of retrieved productname with located product name.
 	}
 	
 	public void getListofVariants(By by) {
@@ -76,7 +108,6 @@ public class Commands extends BasePage {
 	    
 	    WebElement itemCode = driver.findElement(By.xpath("//*[contains(@alt,'"+StrVariant+"')]"));
 	    String itemcodeDataSrc = itemCode.getAttribute("data-src");
-	    System.out.println("data-src: "+itemcodeDataSrc); 
 	    String[] CodeSplit = itemcodeDataSrc.split("https://img.fragrancex.com/images/products/sku/small/", 0);
 	    String Value1 = CodeSplit[1];
 	    String Value2 = Value1.replace(".jpg", "");
@@ -84,16 +115,25 @@ public class Commands extends BasePage {
 	    clickElement(By.xpath("//div/div/div/div/div/div/div/div/div/div/form/input[@value='"+Value2+"']//parent::form/button"));
 	}
 	
-	public void validateCheckOutCartCount() {
-		waitElement(By.xpath("//*[@id=\"AjaxTopCart\"]/a/div"));
-		WebElement CheckOutCount = driver.findElement(By.xpath("//*[@id=\"AjaxTopCart\"]/a/div"));
+	public void validateCheckOutCartCount(Integer quantity) {
+		int num1;
+		waitElement(checkOutPage.CheckOutBagQuantity);
+		WebElement CheckOutCount = driver.findElement(checkOutPage.CheckOutBagQuantity);
 		String BagCount = CheckOutCount.getText();
-		 System.out.println("Number of Check-Out item: "+BagCount); 
+		num1 = Integer.parseInt(BagCount);
+		if(num1 == quantity) {
+            System.out.println("Both actual and expceted are equal");
+            System.out.println("expected:"+quantity); 
+    		System.out.println("actual:"+num1); 
+			}else {
+            System.out.println("actual and expceted are not equal");
+            validateCheckOutCartCount(quantity);
+			}
 	}
 	
 	public void getQuantitylist() {
-		waitElement(By.xpath("//*[@id=\"CartQuantityAsyncForm\"]/div/div[2]/div[2]/div[3]/div[2]/div[1]/select"));
-	    List<WebElement> listOfLinks = driver.findElements(By.xpath("//*[@id=\"CartQuantityAsyncForm\"]/div/div[2]/div[2]/div[3]/div[2]/div[1]/select")); //retrieved all products
+		waitElement(checkOutPage.ItemDropDownList);
+	    List<WebElement> listOfLinks = driver.findElements(checkOutPage.ItemDropDownList); //retrieved all products
 	    System.out.println("Quantity Choices");
 	    for(WebElement e : listOfLinks) 
         {        

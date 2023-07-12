@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "classpath:features",
-		glue = { "common","stepdefinition"}
+		glue = {"stepdefinition","common"}
 		)
 
 public class Runner {

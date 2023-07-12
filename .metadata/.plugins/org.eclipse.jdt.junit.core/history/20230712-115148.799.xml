@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner" project="FirstMac" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="runner.Runner" time="21.966">
+    <testsuite name="Navigational functionality of Frangrancex TOP PICK FOR YOU category" time="21.966">
+      <testcase name="User orders Third product displayed on TOP PICKS FOR YOU category" classname="Navigational functionality of Frangrancex TOP PICK FOR YOU category" time="21.966"/>
+    </testsuite>
+  </testsuite>
+</testrun>

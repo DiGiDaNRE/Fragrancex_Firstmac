@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner" project="FirstMac" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="runner.Runner" time="48.424">
+    <testsuite name="Navigational functionality of Frangrancex TOP PICK FOR YOU category" time="48.424">
+      <testcase name="User orders Third product displayed on TOP PICKS FOR YOU category" classname="Navigational functionality of Frangrancex TOP PICK FOR YOU category" time="48.424">
+        <error>java.lang.NumberFormatException: null&#13;
+	at java.lang.Integer.parseInt(Unknown Source)&#13;
+	at java.lang.Integer.parseInt(Unknown Source)&#13;
+	at common.Commands.validateCheckOutCartCount(Commands.java:123)&#13;
+	at common.Commands.validateCheckOutCartCount(Commands.java:125)&#13;
+	at common.Commands.validateCheckOutCartCount(Commands.java:125)&#13;
+	at common.Commands.validateCheckOutCartCount(Commands.java:125)&#13;
+	at common.Commands.validateCheckOutCartCount(Commands.java:125)&#13;
+	at stepdefinition.FragranceProductSteps.changes_quantity_to(FragranceProductSteps.java:38)&#13;
+	at ✽.Changes quantity to 5(classpath:features/FragranceX.feature:8)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>
