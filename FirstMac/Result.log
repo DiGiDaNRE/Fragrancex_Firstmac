@@ -1,0 +1,55 @@
+2023-07-12 17:47:42  [common.Hooks] (main:) WebDriver start
+2023-07-12 17:47:45  [utility.Commands] (main:) Website URL:https://www.fragrancex.com
+2023-07-12 17:47:51  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:51  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:51  [utility.Commands] (main:) WebElement has been click: By.xpath: /html/body/div[4]/div/div/div[1]/img[2]
+2023-07-12 17:47:51  [utility.Commands] (main:) Popup has been Close
+2023-07-12 17:47:52  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:52  [utility.Commands] (main:) WebElement is visible: By.xpath: //div[2]/div/div[1]/a/img[@title='FragranceX']
+2023-07-12 17:47:52  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/paco-rabanne/1-million-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/thierry-mugler/angel-perfume
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/paco-rabanne/invictus-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/jean-paul-gaultier/jean-paul-gaultier-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/issey-miyake/l-eau-d-issey-issey-miyake-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/giorgio-armani/armani-code-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/lancome/la-vie-est-belle-perfume
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/azzaro/chrome-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/giorgio-armani/acqua-di-gio-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/mont-blanc/montblanc-legend-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/dolce-and-gabbana/light-blue-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/calvin-klein/euphoria-perfume
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/dolce-and-gabbana/dolce-and-gabbana-cologne
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/juicy-couture/viva-la-juicy-perfume
+2023-07-12 17:47:52  [utility.Commands] (main:) Anchor: https://www.fragrancex.com/products/lolita-lempicka/lolita-lempicka-perfume
+2023-07-12 17:47:52  [utility.Commands] (main:) Selected Product: invictus
+
+2023-07-12 17:47:52  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:54  [utility.Commands] (main:) Picked Product: invictus cologne
+2023-07-12 17:47:54  [utility.Commands] (main:) Is displayed product selected: true
+2023-07-12 17:47:54  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 100 ml Eau De Toilette Spray (Tester)
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 50 ml Eau De Toilette Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 100 ml Eau De Toilette Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 200 ml Eau De Toilette Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 75 ml Deodorant Stick
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 150 ml Deodorant Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 100 ml After Shave Balm
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: 100 ml After Shave
+2023-07-12 17:47:54  [utility.Commands] (main:) Variants: Gift Set - 100 ml Eau De Toilette Spray + 151 ml Deodorant Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) Selected Variant: 50 ml Eau De Toilette Spray
+2023-07-12 17:47:54  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:56  [utility.Commands] (main:) WebElement has been click: By.xpath: //div/div/div/div/div/div/div/div/div/div/form/input[@value='invc17m']//parent::form/button
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) Expected and actual checkout quantity is equal
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement has been click: By.xpath: //*[@id="CartQuantityAsyncForm"]/div/div[2]/div[2]/div[3]/div[2]/div[1]/select/option[5]
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:57  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:58  [utility.Commands] (main:) WebElement is visible
+2023-07-12 17:47:58  [utility.Commands] (main:) Expected and actual checkout quantity is equal
+2023-07-12 17:47:58  [common.Hooks] (main:) Webdriver close

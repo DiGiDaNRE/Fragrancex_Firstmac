@@ -1,15 +1,14 @@
 package stepdefinition;
 
-import common.Commands;
 import io.cucumber.java.en.*;
 import pageobjects.HomePage;
 import pageobjects.ProductPage;
+import utility.Commands;
 
 public class FragranceProductSteps extends Commands {
 
 	HomePage homePage = new HomePage();
 	ProductPage productPage = new ProductPage();
-	
 	
 	@Given("User access {string} website")
 	public void user_access_website(String url) {
@@ -29,6 +28,7 @@ public class FragranceProductSteps extends Commands {
 	
 	@Then("Validate quantity is {int}")
 	public void validate_quantity_is(Integer Quantity){
+		getQuantitylist();
 		validateCheckOutCartCount(Quantity);
 	}
 	

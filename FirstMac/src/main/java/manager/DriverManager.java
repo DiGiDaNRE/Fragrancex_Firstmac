@@ -21,7 +21,7 @@ public class DriverManager extends BasePage {
 		};
 	}
 	
-	public void setupDriverChrome() {
+	public static void setupDriverChrome() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		chromeOptions.addArguments("--remote-allow-origins=*");
@@ -34,7 +34,7 @@ public class DriverManager extends BasePage {
 		driver.manage().deleteAllCookies();
 	}
 	
-	public void setupDriverfirefox() {
+	public static void setupDriverfirefox() {
 		FirefoxOptions firefoxOptions = new FirefoxOptions();
 		WebDriverManager.firefoxdriver().setup();
 		driver = new FirefoxDriver(firefoxOptions);
@@ -42,7 +42,7 @@ public class DriverManager extends BasePage {
 		driver.manage().deleteAllCookies();
 	}
 	
-	public void setupDriverEdge() {
+	public static void setupDriverEdge() {
 		EdgeOptions edgeOptions = new EdgeOptions();
 		WebDriverManager.edgedriver().setup();
 		edgeOptions.addArguments("--remote-allow-origins=*");
