@@ -3,8 +3,6 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 
-import utility.Commands;
-
 
 public class ProductPage  {
 	

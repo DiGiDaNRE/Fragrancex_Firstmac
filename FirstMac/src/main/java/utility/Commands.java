@@ -97,10 +97,12 @@ public class Commands extends BasePage {
 	
 	public void verifyProduct(String HrefProductAnchorInitial) {
 		String[] SplitAnchor1 = HrefProductAnchorInitial.split("by", 0);										//retrieving productName
-	    logger.info("Selected Product: "+SplitAnchor1[0]);	
+		System.out.println("Selected Product: "+SplitAnchor1[0]);	
+		logger.info("Selected Product: "+SplitAnchor1[0]);	
 	    WebElement ComapreProduct = driver.findElement(productPage.ProductNameSelector);								//locating productName for comparison
 		String ProdctName = ComapreProduct.getText().toLowerCase();
 		logger.info("Picked Product: "+ProdctName);
+		System.out.println("Picked Product: "+ProdctName);
 		System.out.println("Is displayed product selected:"+ProdctName.replaceAll("\\s", "_").contains(SplitAnchor1[0].replaceAll("\\s", "_")));
 		logger.info("Is displayed product selected: "+ProdctName.replaceAll("\\s", "_").contains(SplitAnchor1[0].replaceAll("\\s", "_")));	
 	}
@@ -109,7 +111,7 @@ public class Commands extends BasePage {
 		getList(by);
 	    List<WebElement> retrievedElements = container.getWebElementList();
 	    																											
-	    System.out.println("Product list of 'Top Picks For You'");
+	    System.out.println("Variant List:");
 	    for(WebElement e : retrievedElements) 
 	    	{        	
 	    		System.out.println("Variants: "+e.getText());
